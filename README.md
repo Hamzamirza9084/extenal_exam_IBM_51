@@ -58,3 +58,47 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
+
+## Docker Documentation
+
+This project can be containerized. Below are the required commands for managing the Docker image and container.
+
+### 1. Pull the Docker Image
+To pull an existing Docker image from a registry (e.g., Docker Hub):
+```bash
+docker pull laravel-bmi-app:latest
+```
+*(Note: Replace `laravel-bmi-app:latest` with the actual image name if hosted elsewhere).*
+
+### 2. Run the Image as a Container
+To run the image and map it to your local port 8000:
+```bash
+docker run -d --name bmi-calculator -p 8000:8000 laravel-bmi-app:latest
+```
+- `-d`: Runs the container in detached mode (in the background).
+- `--name`: Assigns a specific name (`bmi-calculator`) to the container.
+- `-p 8000:8000`: Maps port 8000 on your local machine to port 8000 inside the container.
+
+### 3. Create a Container from the Image (Without Starting It)
+If you just want to create the container to configure it before running:
+```bash
+docker create --name my-bmi-container -p 8000:8000 laravel-bmi-app:latest
+```
+You can then start this container later using:
+```bash
+docker start my-bmi-container
+```
+
+### 4. Stop a Running Container
+To safely stop the running container:
+```bash
+docker stop bmi-calculator
+```
+*(Use the name or the container ID provided when running it).*
+
+---
+
+## Git Workflow
+As requested, the user handles the Git initialization, commits, cloning into a new directory, making color/button modifications, and pushing the new commits.
+
+
