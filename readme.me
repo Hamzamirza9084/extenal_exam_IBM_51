@@ -83,3 +83,34 @@ docker stop bmi-calculator
 
 ## Git Workflow
 As requested, the user handles the Git initialization, commits, cloning into a new directory, making color/button modifications, and pushing the new commits.
+
+## Docker
+This project includes a `Dockerfile` that builds and runs the Swing app.
+
+> Note: Docker desktop/GUI forwarding is environment-specific. The container will start the Java app; you may need X11/Wayland forwarding for GUI display depending on your host setup.
+
+### 1) Pull the Docker image
+If you already pushed the image to a registry, use:
+
+```bash
+docker pull /: ```
+
+### 2) Run the image as a container
+```bash
+docker run --rm -it /: ```
+
+### 3) Create a container from the image
+```bash
+docker create --name bmi-calculator /: ```
+
+### 4) Start the created container
+```bash
+docker start bmi-calculator
+```
+
+### 5) Stop a running container
+```bash
+docker stop bmi-calculator
+```
+
+---
